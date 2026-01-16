@@ -32,5 +32,18 @@ export class Stack {
         return (this.index==0) ? true : false; // O(1)
     }
 
+    arrayToStack (arr: any[]) {
+        this.items = [...arr];
+        this.index = this.items.length; 
+        return this; // O(1)
+    }
+
+    stackToArray () {
+        const arr = [];
+        for(let i=0; i<this.index; i++){
+            arr.push(this.items[i]);
+        }
+        return arr; // O(n)
+    }
 }
 
